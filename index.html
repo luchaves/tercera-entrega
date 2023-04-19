@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description"
+        content="Aquí podrás encontrar una parte de nuestro catálogo de modelos, también puedes contactarnos y realizar pedidos especiales.">
+    <meta name="keywords"
+        content="BARBIJOS, COVID, PANDEMIA, ALMOHADONES, DECORACION, MODELOS, PRODUCTOS, BASICOS, AUXILIARES">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b6607543a6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Finlandica:ital@1&family=Koulen&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Comision #51170 - Chaves Lucas</title>
+    <link rel="icon" href="/imagenes/favicon/Reina-batata.ico">
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="base_web">
+
+    <header class="navbar_color">
+        <!--NavBar-->
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid ">
+                <h1 class="navbar-brand ">Reina Batata</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!--Boton Inicio-->
+                        <li class="nav-item item space_item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <!--Boton productos-->
+                        <li class="nav-item space_item">
+                            <a class="nav-link" href="index.html">Productos</a>
+                        </li>
+                        <!--Boton talles-->
+                        <li class="nav-item space_item">
+                            <a class="nav-link" href="#">Talles</a>
+                        </li>
+                        <!--Boton quienes somos-->
+                        <li class="nav-item space_item">
+                            <a class="nav-link" href="#">Quienes somos</a>
+                        </li>
+                        <!--Boton contacto-->
+                        <li class="nav-item space_item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container contenedor overflow-visible">
+            <!--Productos-->
+            <h2 id="barbijos" class="d-flex justify-content-center productos_titulo">¡Nuestros productos!</h2>
+
+            <!-- Cards productos -->
+            <section id="cartas" class="row"></section>
+
+
+            <!--Cartel emergente-->
+            <p class="productos_intro boxShadow" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
+                ¡Realizando una compra de 2 productos o más, ¡el envío será gratis!
+            </p>
+            <!-- Button trigger modal -->
+            <button id="btnCarrito" type="button" class="btn btn-primario btn-largo" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"><i class="fa-solid fa-cart-shopping"></i></button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Carrito de compras</h5>
+                        </div>
+                        <div id="carrito">
+                            <!-- Lo que se agregue al carrito -->
+                        </div>
+                        <div id="footer_padre" class="modal-footer d-flex justify-content-around align-items-center">
+                            <p id="totalAPagar"></p>
+                            <div>
+                                <button id="btnCerrar" type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                                <button id="btnCompra" type="button" class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer_item">
+            <a class="footer_item-item" target="_blank" href="https://www.instagram.com/reinabatata.textiles/"><i
+                    class="footer_item-icon fa-brands fa-instagram-square"></i>Seguinos</a>
+        </div>
+        <div class="footer_item">
+            <a class="footer_item-item" href="mailto:reinabatata.textiles@gmail.com"><i
+                    class="footer_item-icon fa-solid fa-envelope"></i>Contactenos</a>
+        </div>
+        <div class="footer_item">
+            <a class="footer_item-item"><i class="footer_item-icon fa-solid fa-copyright"></i>2020-2022</a>
+        </div>
+    </footer>
+    <!--Scripts-->
+    <script src="/js/proyectoFinal.js" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
