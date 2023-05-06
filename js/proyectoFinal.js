@@ -1,5 +1,4 @@
 //array
-
 class Producto {
     constructor(id, nombre, precio, foto) {
         this.id = id;
@@ -10,28 +9,24 @@ class Producto {
 }
 
 //Declaracion de arrays
-const compras = [];
 let carrito = [];
+const compras = [];
 let productos = [];
 const precioCarrito = [];
 const cartas = document.getElementById(`cartas`)
-const contenidoCarrito = document.getElementById(`carrito`)
 const total = document.getElementById(`totalAPagar`)
-const btnPrecio = document.getElementById(`btnCarrito`)
 const btnCompra = document.getElementById(`btnCompra`)
 const btnCerrar = document.getElementById(`btnCerrar`)
-
+const btnCarritoModal = document.getElementById(`btnCarrito`)
+const contenidoCarrito = document.getElementById(`carrito`)
 
 //Ejecución de funciones
-AOS.init();
-//cardsProductos();
+
 calcularPrecio();
 obtenerProductos();
 lsCarrito();
 
-
 //Declaracion de funciones
-
 function lsCarrito() {
     if (localStorage.getItem(`carrito`)) {
         carrito = JSON.parse(localStorage.getItem(`carrito`))
@@ -39,37 +34,72 @@ function lsCarrito() {
     }
 }
 
+//SweatAlert con imput. 
+SAInput()
+async function SAInput() {
+    const inputValue = ""
+    const { value: userName } = await Swal.fire({
+        title: '¡Bienvenido!',
+        input: 'text',
+        inputLabel: '¡Accedé a ofertas increibles! Ingresa tu nombre, por favor.',
+        inputValue: inputValue,
+        background: 'rgba(227, 227, 227, 0.98)',
+        confirmButtonColor: 'rgba(197, 200, 172)',
+        inputValidator: (value) => {
+            if (!value) {
+                return '¡Por favor, ingrese su nombre!'
+            }
+        }
+    })
+    //Si no ingresa su nombre, pierde descuento de envios. 
+    if (userName) {
+        Swal.fire(`Hola, ${userName}. ¡Bienvenido!`)
+        let cartel = document.querySelector(`.intro`);
+        cartel.innerHTML = `<p class="productos_intro boxShadow" data-aos="fade-right" data-aos-delay="3000" data-aos-duration="1000">
+        ${userName}, ¡Realizando una compra de 5 productos o más, el envío será gratis! </p>`
+    }
+}
+
+//JSON con productos.
 function obtenerProductos() {
-    const URLJSON="js/productos.json"
+    const URLJSON = "js/productos.json"
     fetch(URLJSON)
         .then(res => res.json())
-        .then(data=>{
-            console.log(data);
-            productos=data
+        .then(data => {
+            productos = data
             cardsProductos()
         })
-    }
-    
+}
 
+//Renderizado de cards
 function cardsProductos() {
-
     for (const producto of productos) {
         let carta = document.createElement(`div`);
         carta.className = `card`;
         carta.innerHTML = `<div>
-        <img src="${producto.img}" class="productos_img card-img-top" alt="productos">
+        <a><img src="${producto.img}" class="productos_img card-img-top" alt="productos" data-bs-toggle="modal" data-bs-target="#_${producto.id}"></a>
+        </div>
+        <div class="modal fade" id="_${producto.id}">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body modal-xl d-flex flex-column">
+                        <img src="${producto.img}" class="gallery-item productos_img-modal" alt="gallery">
+                    </div>
+                    </div>
+                    </div>
+                    </div>
     <div class="card-body">
         <h5 class="d-flex justify-content-center align-items-center card-title">${producto.tipo}</h5>
         <h6 class="d-flex justify-content-center align-items-center card-title talles">Talles disponibles<br>${producto.talle}</h6>
         <div class="d-flex justify-content-around align-items-center">
-            <p class="card-text">$${producto.precio}</p>
-            <div>
-            <button id="agregarCarrito${producto.id}" type="button" class="btn btn-primario"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
+        <p class="card-text">$${producto.precio}</p>
+        <div>
+        <button id="agregarCarrito${producto.id}" type="button" class="btn btn-primario"><i class="fa-solid fa-cart-plus"></i></button>
         </div>
-    </div>
-    </div>
-    `;
+        </div>
+        </div>
+        </div>
+        `;
         cartas.append(carta);
         // Evento Button 
         const button = document.getElementById(`agregarCarrito${producto.id}`)
@@ -83,11 +113,22 @@ function cardsProductos() {
             carrito.push(producto)
             //console.log(carrito)
             calcularPrecio();
-            localStorage.setItem("Carrito", JSON.stringify(carrito))
         })
     }
 }
 
+//Dibujar boton vaciar carrito
+function BotonVaciar() {
+    const vaciarCarrito = document.getElementById(`VaciarCarrito`)
+    vaciarCarrito.style.display = carrito.length === 0 ? 'none' : 'block'
+    // Boton vaciar carrito
+    vaciarCarrito.addEventListener("click", () => {
+        carrito.length = 0
+        contenidoCarrito.innerHTML = ``;
+        contCarrito()
+        calcularPrecio()
+    })
+}
 
 //funcion precio carrito
 function calcularPrecio() {
@@ -98,12 +139,11 @@ function calcularPrecio() {
         return push.reduce((acc, el) => acc + el, 0);
     }
     let montoTotal = sumaPrecio(...push)
-    //console.log(montoTotal);
-    carrito.length === 0 ? total.innerHTML = `<p>¡Su carrito se encuentra vacío!</p>` : total.innerHTML = `<p>Total a apagar $${montoTotal}</p>`
+    carrito.length === 0 ? total.innerHTML = `<p>¡Su carrito se encuentra vacío!</p>` : total.innerHTML = `<p>Total a pagar $${montoTotal}</p>`
 }
 
-btnPrecio.addEventListener("click", contCarrito)
-
+//renderizado del modal carrito
+btnCarritoModal.addEventListener("click", contCarrito)
 function contCarrito() {
     for (const producto of carrito) {
         let contCarrito = document.createElement(`div`);
@@ -113,23 +153,28 @@ function contCarrito() {
         <div class="cart_cont">
         <h5 class=" d-flex justify-content-center align-items-center card-title">${producto.tipo}</h5>
         <div class="d-flex justify-content-around align-items-center">
+        <div>
         <p class="card-text">$${producto.precio}</p>
-                </div>
-            </div>
-            </div>
-            <hr>
-            `;
+        </div>
+        </div>
+        </div>
+        </div>
+        <hr>
+        `;
         contenidoCarrito.append(contCarrito);
-        localStorage.setItem("carrito", JSON.stringify(carrito))
-
     }
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    //Aparece boton vaciar carrito. 
+    BotonVaciar()
 }
 
-
+//Vaciador de carrito al cerrar el modal
 btnCerrar.addEventListener(`click`, function () {
     contenidoCarrito.innerHTML = ``;
+    btnVaciar.innerHTML = ``;
 })
 
+//Ternario para habilitar compra.
 btnCompra.addEventListener(`click`, function () {
     carrito.length !== 0 ?
         //Si el carrito tiene productos y se presiona comprar.
@@ -143,6 +188,7 @@ btnCompra.addEventListener(`click`, function () {
         );
 })
 
+//SweatAlert para la compra realizada.
 function correct() {
     Swal.fire(
         `¡Su compra se ha realizado con exito!`,

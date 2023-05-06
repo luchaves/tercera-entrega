@@ -1,30 +1,194 @@
 [
     {
         "id": 1,
-        "tipo": "Almohadon basico",
-        "precio": 1500,
+        "tipo": "Combo Cleo",
+        "precio": 3500,
         "talle": "S, M, L",
-        "img": "./imagenes/productos/almohadones/07.png"
+        "img": "./imagenes/productos/almohadones/01.png",
+        "source": "almohadones/01"
     },
     {
         "id": 2,
-        "tipo": "Almohadon personalizado",
-        "precio": 1800,
+        "tipo": "Combo Suri",
+        "precio": 3500,
         "talle": "S, M, L",
-        "img": "./imagenes/productos/almohadones/01.png"
+        "img": "./imagenes/productos/almohadones/02.png",
+        "source": "almohadones/02"
     },
     {
         "id": 3,
-        "tipo": "Barbijo basico",
-        "precio": 400,
+        "tipo": "Combo JoJo",
+        "precio": 3500,
         "talle": "S, M, L",
-        "img": "./imagenes/productos/barbijos/4.png"
+        "img": "./imagenes/productos/almohadones/03.png",
+        "source": "almohadones/03"
     },
     {
         "id": 4,
-        "tipo": "Barbijo personalizado",
-        "precio": 550,
+        "tipo": "Combo Kohl’s",
+        "precio": 3500,
         "talle": "S, M, L",
-        "img": "./imagenes/productos/barbijos/9.png"
+        "img": "./imagenes/productos/almohadones/04.png",
+        "source": "almohadones/04"
+    },
+    {
+        "id": 5,
+        "tipo": "Combo Daisy",
+        "precio": 3500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/05.png",
+        "source": "almohadones/05"
+    },
+    {
+        "id": 6,
+        "tipo": "Combo Libél",
+        "precio": 3500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/06.png",
+        "source": "almohadones/06"
+    },
+    {
+        "id": 7,
+        "tipo": "Combo Benit",
+        "precio": 3500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/07.png",
+        "source": "almohadones/07"
+    },
+    {
+        "id": 8,
+        "tipo": "Combo Igls",
+        "precio": 5500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/08.png",
+        "source": "almohadones/08"
+    },
+    {
+        "id": 9,
+        "tipo": "Combo Summer",
+        "precio": 5500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/09.png",
+        "source": "almohadones/09"
+    },
+    {
+        "id": 10,
+        "tipo": "Combo Haven",
+        "precio": 6500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/010.png",
+        "source": "almohadones/010"
+    },
+    {
+        "id": 11,
+        "tipo": "Combo Snow",
+        "precio": 5500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/011.png",
+        "source": "almohadones/011"
+    },
+    {
+        "id": 12,
+        "tipo": "Combo BouBash",
+        "precio": 6500,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/almohadones/012.png",
+        "source": "almohadones/012"
+    },
+    {
+        "id": 13,
+        "tipo": "Combo Fine",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/1.png",
+        "source": "barbijos/1"
+    },
+    {
+        "id": 14,
+        "tipo": "Combo Tricton",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/2.png",
+        "source": "barbijos/2"
+    },
+    {
+        "id": 15,
+        "tipo": "Combo Brossoc",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/3.png",
+        "source": "barbijos/3"
+    },
+    {
+        "id": 16,
+        "tipo": "Combo Zed",
+        "precio": 900,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/4.png",
+        "source": "barbijos/4"
+    },
+    {
+        "id": 17,
+        "tipo": "Combo Cozway",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/5.png",
+        "source": "barbijos/5"
+    },
+    {
+        "id": 18,
+        "tipo": "Combo Borla ",
+        "precio": 900,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/6.png",
+        "source": "barbijos/6"
+    },
+    {
+        "id": 19,
+        "tipo": "Combo Oxxon",
+        "precio": 900,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/7.png",
+        "source": "barbijos/7"
+    },
+    {
+        "id": 20,
+        "tipo": "Combo Alfiezza",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/8.png",
+        "source": "barbijos/8"
+    },
+    {
+        "id": 21,
+        "tipo": "Combo Olokuti",
+        "precio": 900,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/9.png",
+        "source": "barbijos/9"
+    },
+    {
+        "id": 22,
+        "tipo": "Combo Rescá",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/10.png",
+        "source": "barbijos/10"
+    },
+    {
+        "id": 23,
+        "tipo": "Combo Etam",
+        "precio": 900,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/11.png",
+        "source": "barbijos/11"
+    },
+    {
+        "id": 24,
+        "tipo": "Combo Geox",
+        "precio": 1400,
+        "talle": "S, M, L",
+        "img": "./imagenes/productos/barbijos/12.png",
+        "source": "barbijos/12"
     }
 ]
